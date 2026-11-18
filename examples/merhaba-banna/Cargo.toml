@@ -1,0 +1,18 @@
+[package]
+name = "merhaba-banna"
+version = "0.1.0"
+edition = "2024"
+description = "brct ile yazılmış örnek Banna OS uygulaması"
+
+# Banna OS kütüphanesi: pencere, çizim, arayüz öğeleri, dosya, ağ (https dahil), JSON.
+[dependencies]
+banna = { package = "banna-user", path = "../../user" }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+# Bağımsız proje (üst dizindeki bir çalışma alanına katılmaz).
+[workspace]

@@ -1,0 +1,14 @@
+# Derleme çıktıları
+target/
+/build/
+__pycache__/
+*.pyc
+
+# Yerel sanal makine paketi (disk imajları ve yerel ayarlar)
+/BannaOS.utm/
+
+# hatch deposu imza anahtarı (gizli; yalnızca açık anahtar koda gömülüdür)
+/keys/
+
+# macOS
+.DS_Store

@@ -1,0 +1,13 @@
+[build]
+target = "x86_64-banna_user.json"
+
+[unstable]
+json-target-spec = true
+build-std = ["core", "compiler_builtins", "alloc"]
+build-std-features = ["compiler-builtins-mem"]
+
+[target.x86_64-banna_user]
+rustflags = [
+    "-C", "link-arg=-Tuser.ld",
+    "-C", "relocation-model=static",
+]

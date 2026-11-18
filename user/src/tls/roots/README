@@ -1,0 +1,13 @@
+Gömülü kök sertifikalar (DER). macOS sistem kök deposundan alındı:
+  security find-certificate -c "<ad>" -p /System/Library/Keychains/SystemRootCertificates.keychain \
+    | openssl x509 -outform DER -out <dosya>.der
+Yeni kök eklerken dosyayı buraya koyup x509.rs içindeki ROOTS listesine ekleyin.
+
+isrg-root-x1/x2        Let's Encrypt (RSA / P-384)
+digicert-global-root-* DigiCert (CA ve G2 RSA, G3 P-384)
+globalsign-root-ca/r3  GlobalSign (RSA; GTS çapraz imzası, R3)
+gts-root-r1/r4         Google Trust Services (RSA / P-384)
+amazon-root-ca-1/3     Amazon (RSA / P-256)
+usertrust-rsa/ecc      Sectigo (RSA / P-384)
+starfield-root-g2      Starfield (RSA)
+go-daddy-root-g2       GoDaddy (RSA)

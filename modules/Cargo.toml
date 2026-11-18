@@ -1,0 +1,11 @@
+[workspace]
+resolver = "2"
+members = ["sdk", "rtl8139"]
+
+[profile.dev]
+panic = "abort"
+opt-level = 2
+
+[profile.release]
+panic = "abort"
+opt-level = 2

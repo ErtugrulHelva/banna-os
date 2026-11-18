@@ -1,0 +1,17 @@
+[build]
+target = "x86_64-banna_kmod.json"
+
+[unstable]
+json-target-spec = true
+build-std = ["core", "compiler_builtins", "alloc"]
+build-std-features = ["compiler-builtins-mem"]
+
+[target.x86_64-banna_kmod]
+rustflags = [
+    "-C", "link-arg=--no-dynamic-linker",
+    "-C", "link-arg=-e",
+    "-C", "link-arg=module_entry",
+    "-C", "link-arg=-z",
+    "-C", "link-arg=max-page-size=4096",
+    "-C", "link-arg=--pack-dyn-relocs=none",
+]

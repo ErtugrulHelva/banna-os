@@ -1,0 +1,86 @@
+[package]
+name = "banna-user"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "banna"
+path = "src/lib.rs"
+
+[dependencies]
+
+[profile.dev]
+panic = "abort"
+opt-level = 2
+
+[profile.release]
+panic = "abort"
+opt-level = 3
+lto = true
+codegen-units = 1
+
+# Masaüstü uygulamaları: her biri apps/<kimlik>/ klasöründe, /apps/<kimlik>/ altına kurulur.
+[[bin]]
+name = "terminal"
+path = "../apps/terminal/main.rs"
+
+[[bin]]
+name = "settings"
+path = "../apps/settings/main.rs"
+
+[[bin]]
+name = "monitor"
+path = "../apps/monitor/main.rs"
+
+[[bin]]
+name = "brct"
+path = "../apps/brct/main.rs"
+
+[[bin]]
+name = "about"
+path = "../apps/about/main.rs"
+
+[[bin]]
+name = "paint"
+path = "../apps/paint/main.rs"
+
+[[bin]]
+name = "plasma"
+path = "../apps/plasma/main.rs"
+
+[[bin]]
+name = "store"
+path = "../apps/store/main.rs"
+
+[[bin]]
+name = "setup"
+path = "../apps/setup/main.rs"
+
+[[bin]]
+name = "banna-panel"
+path = "../apps/banna-panel/main.rs"
+
+[[bin]]
+name = "files"
+path = "../apps/files/main.rs"
+
+[[bin]]
+name = "viewer"
+path = "../apps/viewer/main.rs"
+
+[[bin]]
+name = "notes"
+path = "../apps/notes/main.rs"
+
+[[bin]]
+name = "banna-search"
+path = "../apps/banna-search/main.rs"
+
+[[bin]]
+name = "driver-manager"
+path = "../apps/driver-manager/main.rs"
+
+[[bin]]
+name = "b-player"
+path = "../apps/b-player/main.rs"

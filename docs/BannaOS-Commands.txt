@@ -1,0 +1,162 @@
+BannaOS Syntax
+==============
+
+Commands are typed at the terminal prompt (user@banna>) and confirmed with
+Enter. Arguments in <angle brackets> are required, arguments in [square
+brackets] are optional. Type "help" at any time to see the list on screen.
+
+
+GENERAL
+-------
+
+* Help: Lists the commands available for the user.
+
+* Clear: Clears the terminal screen.
+
+* Echo <text>: Prints the given text back to the screen.
+
+* Uptime: Shows how long the system has been running since boot.
+
+* Date: Shows the current date and time from the system clock.
+
+* Klavye [tr|us]: Shows or changes the keyboard layout
+  (tr = Turkish Q, us = US English).
+
+
+USERS AND SESSION
+-----------------
+
+* Whoami: Shows the current user, user id and home directory.
+
+* Users: Lists all user accounts on the system.
+
+* Useradd <name> [admin]: Creates a new user account. Asks for the new
+  password. Adding "admin" makes the user an administrator.
+  (Administrators only)
+
+* Userdel <name>: Removes a user account. The home directory is kept.
+  (Administrators only)
+
+* Passwd [name]: Changes your own password, or another user's password
+  when run by an administrator.
+
+* Sudo <command>: Runs a single command with full (root) rights after
+  asking for your password. (Administrators only)
+
+* Logout: Ends the session and returns to the login screen.
+
+
+FILES AND DISKS
+---------------
+
+* Ls [path]: Lists the files and folders in a directory.
+
+* Cat <file>: Prints the contents of a file.
+
+* Write <file> <text>: Writes a line of text into a file.
+
+* Mkdir <path>: Creates a new directory.
+
+* Rm <path>: Removes a file or an empty directory.
+
+* Df: Shows how much disk space is used and free.
+
+* Disks: Lists the disks and volumes found on the machine.
+
+* Mount: Lists the mounted file systems (for example /usb0).
+
+* Umount <path>: Unmounts a file system, e.g. "umount /usb0", before
+  removing a USB stick.
+
+  Note: Normal users can write only to their home directory
+  (/home/<name>), to /tmp and to USB sticks. Use "sudo" for other places.
+
+
+SYSTEM INFORMATION
+------------------
+
+* Mem: Shows physical memory and kernel heap usage.
+
+* Cpu: Shows processor information and the load of each CPU core.
+
+* Ps: Lists the running threads and processes.
+
+* Kill <pid>: Terminates the process with the given process id.
+
+* Lspci: Lists the PCI devices of the machine.
+
+* Lsusb: Lists the connected USB devices.
+
+* Acpi: Shows the ACPI tables and platform information.
+
+* Aml eval <path> | aml devices: Evaluates an ACPI method or lists
+  the ACPI devices. (For developers)
+
+* Battery: Shows the battery level and charger status.
+
+
+SCREEN AND DESKTOP
+------------------
+
+* Desktop: Starts the graphical desktop.
+
+* Console: Leaves the desktop and returns to the full-screen text
+  console.
+
+* Fps: Shows display and desktop drawing statistics.
+
+* Gpu | gpu modes | gpu mode <W>x<H>: Shows the graphics adapter, lists
+  the supported resolutions, or changes the resolution
+  (e.g. "gpu mode 1920x1080").
+
+
+NETWORK
+-------
+
+* Net: Shows the network status: cable link, IP address, DHCP lease and
+  statistics.
+
+* Ping <host|ip> [count]: Checks whether another computer can be reached,
+  e.g. "ping example.com 4".
+
+* Host <name>: Finds the IP address of a host name, e.g. "host example.com".
+
+* Dhcp renew | dhcp release: Renews or gives back the IP address.
+
+* Netstat: Lists the open TCP connections.
+
+
+PROGRAMS
+--------
+
+* Programs: Lists the built-in test programs.
+
+* Run <name> [&]: Runs a built-in program. A trailing "&" runs it in the
+  background.
+
+Programs stored on the disk (in /bin) are started just by typing their name:
+
+* Hello: A small example program.
+
+* Ls [path] / Cat <file>: Disk versions of the file commands.
+
+* Sysinfo: Prints system information.
+
+* Http <url> [file]: Downloads a web page or file, e.g.
+  "http example.com/" or "http 10.0.2.2:8000/a.txt /home/berke/a.txt".
+
+* Tcpecho [port]: A small network server that sends back whatever it
+  receives (for testing).
+
+* Plasma / Paint: Graphical demo programs that open a window on the
+  desktop.
+
+* Fputest: Tests the processor's floating point unit.
+
+
+POWER
+-----
+
+* Reboot: Reboots the system.
+
+* Shutdown: Turns the machine off.
